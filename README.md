@@ -78,11 +78,8 @@ We now have two virtual machines to simulate the Domain Controller (Admin Capabi
 </p> 
 <br />
 
-<h2>Set Up Active Directory</h2>
+<h2>Deploy Active Directory</h2>
 
 <p>
-Something here
-</p>
-<p>
-<img src="https://i.imgur.com/m2m7ppf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Under construction
 </p>
