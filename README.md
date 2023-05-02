@@ -49,7 +49,7 @@ Create an Azure Virtual Machine Windows 2022 Server (for most updated version), 
 </p>
 
 <p>
-We will also create the guest/user VM simulating an external user logging into the directory. We'll call this VM "Client-1" and it will be on a Windows 10 with at least 2 vcups. We'll use the same username 'labuser' and password for simplicity.
+We will also create the guest/user VM simulating an external user logging into the directory. We'll call this VM "Client-1" and it will be on a Windows 10 with at least 2 vcpus. We'll use the same username 'labuser' and password for simplicity.
 </p>
 <p>
 <img src="https://i.imgur.com/fHX7ziX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -59,7 +59,7 @@ We will also create the guest/user VM simulating an external user logging into t
 </p>
 
 <p>
-Make sure the virtual network for the Client-1 VM is the same as for the DC-1 VM. For this example the Virtual Network is 'AD-Lab-Vnet.' As your CLient-1 VM is creating, let's change the Networking Interface Controller (NIC) from 'dynamic' to 'static' for the Domain Controller VM. This means whether we turn off the desktop/unplug, the IP Configuration will not change for that server at all. Go to the DC-1 VM -> Networking -> "Networking Interface: dc1164 -> IP Configurations -> Select the IP configuration at bottom -> Click toggle from 'Dynamic' to 'Static' and then click 'Save.'
+Make sure the virtual network for the Client-1 VM is the same as for the DC-1 VM. For this example the Virtual Network is 'AD-Lab-Vnet.' As your Client-1 VM is creating, let's change the Networking Interface Controller (NIC) from 'dynamic' to 'static' for the Domain Controller VM. This means whether we turn off the desktop/unplug, the IP Configuration will not change for that server at all. Go to the DC-1 VM -> Networking -> "Networking Interface: dc1164 -> IP Configurations -> Select the IP configuration at bottom -> Click toggle from 'Dynamic' to 'Static' and then click 'Save.'
 </p>
 <p>
 <img src="https://i.imgur.com/oamh45x.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -81,5 +81,33 @@ We now have two virtual machines to simulate the Domain Controller (Admin Capabi
 <h2>Deploy Active Directory</h2>
 
 <p>
-Under construction
+Now that we have both VMs created, we'll remote desktop login to both and test connectivity for both by opening the Windows Command Prompt and "ping" the private IP of DC-1 from Client 1 by typing 'ping -t 10.2.0.4 (DC-1's private IP address).
 </p>
+
+<p>
+<img src="https://i.imgur.com/4IoFAOf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+We see that we get a "timed out" response which mean DC-1's firewall settings have disabled ICMP. We can go to DC-1's "Windows Defender Firewall" and enable pinging by enabling in and outgoing ICMP messaging. 
+<p>
+<img src="https://i.imgur.com/LqTMz8S.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<p>
+Now let's install Active Directory on DC-1.
+<p>
+<br />
+  
+<p>
+Now let's install Active Directory. Open Server Manager from the Start button on DC-1 and select 'Add Roles and Features'.
+</p>
+
+<p>
+<img src="https://i.imgur.com/vn2H5J1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+An install prompt will appear. Hit next until you get to the 'Server Roles' step in the install process. Check the box that says 'Active Directory Domanin Servers -> Next -> Install. 
+<img src="https://i.imgur.com/Kf8O0rx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
