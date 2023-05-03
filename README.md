@@ -81,26 +81,26 @@ We now have two virtual machines to simulate the Domain Controller (Admin Capabi
 <h2>Deploy Active Directory</h2>
 
 <p>
-Now that we have both VMs created, we'll remote desktop login to both and test connectivity for both by opening the Windows Command Prompt and "ping" the private IP of DC-1 from Client 1 by typing 'ping -t 10.2.0.4 (DC-1's private IP address).
+Now that we have both VMs created, we'll remote desktop login to both and test connectivity for both by opening the Windows Command Prompt and "ping" the private IP of DC-1 from Client 1 by typing 'ping -t 10.2.0.4' (DC-1's private IP address).
 </p>
 
 <p>
 <img src="https://i.imgur.com/4IoFAOf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-We see that we get a "timed out" response which mean DC-1's firewall settings have disabled ICMP. We can go to DC-1's "Windows Defender Firewall" and enable pinging by enabling in and outgoing ICMP messaging. 
+We see that we get a "timed out" response which means DC-1's firewall settings have disabled ICMP. We can go to DC-1's "Windows Defender Firewall" and enable pinging by enabling in and outgoing ICMP messaging. 
 <p>
 <img src="https://i.imgur.com/LqTMz8S.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <br />
 
 <p>
-Now let's install Active Directory on DC-1.
+Ping DC-1 from Client 1 again. This time you shoud see ping success with 4 messages sent and 0 dropped. 
 <p>
 <br />
   
 <p>
-Now let's install Active Directory. Open Server Manager from the Start button on DC-1 and select 'Add Roles and Features'.
+Now let's install Active Directory on DC-1. Open Server Manager from the Start button on DC-1 and select 'Add Roles and Features'.
 </p>
 
 <p>
@@ -109,5 +109,25 @@ Now let's install Active Directory. Open Server Manager from the Start button on
 <p>
 An install prompt will appear. Hit next until you get to the 'Server Roles' step in the install process. Check the box that says 'Active Directory Domanin Servers -> Next -> Install. 
 <img src="https://i.imgur.com/Kf8O0rx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> Check the top right alert horn icon on the server manager for a yellow exclamation. Click there and click 'Promote the server to a domain controller.'
+<p>
+<p>
+<img src="https://i.imgur.com/wugJ6r5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>    
+<p>
+Now a configuration window pops up. Select the bubble 'Add a new forest' and choose a domain name. We will choose 'mydomain.com' for this example. Click next then type in a password. Click next until you get to the 'Installation' step and click 'Install'. Once the installation is complete, the configuration wizard will inform you that the installation is complete and the computer must restart. It may do so automatically. Restart the Remote Desktop for DC-1. Now when we log back in, we must log in with the context of the domain server so we will login with username 'mydomain.com\labuser' and the password we created when we added the forest. Now we have logged in as DC-1 AD DS-enabled.  
+</p>
+<p>
+<img src=https://i.imgur.com/qrQiDG6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/nNUJTxs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/ZqVby7Z.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/pOj4doN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <br />
