@@ -131,3 +131,7 @@ Now a configuration window pops up. Select the bubble 'Add a new forest' and cho
 <img src="https://i.imgur.com/pOj4doN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <br />
+
+<h2>Create an Admin and Normal User Account in AD</h2>
+
+<p>
