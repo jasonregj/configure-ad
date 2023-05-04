@@ -119,7 +119,7 @@ An install prompt will appear. Hit next until you get to the 'Server Roles' step
 Now a configuration window pops up. Select the bubble 'Add a new forest' and choose a domain name. We will choose 'mydomain.com' for this example. Click next then type in a password. Click next until you get to the 'Installation' step and click 'Install'. Once the installation is complete, the configuration wizard will inform you that the installation is complete and the computer must restart. It may do so automatically. Restart the Remote Desktop for DC-1. Now when we log back in, we must log in with the context of the domain server so we will login with username 'mydomain.com\labuser' and the password we created when we added the forest. Now we have logged in as DC-1 AD DS-enabled.  
 </p>
 <p>
-<img src=https://i.imgur.com/qrQiDG6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/qrQiDG6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 <img src="https://i.imgur.com/nNUJTxs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -135,7 +135,7 @@ Now a configuration window pops up. Select the bubble 'Add a new forest' and cho
 <h2>Create an Admin and Normal User Account in AD</h2>
 
 <p>
-Now we are logged back in DC-1 with AD DS admin capability. Open Active Directory by clciking the start menu. Type Active Directory into the search and click the 'Active Directory Users and Computers' application. This will bring us to the AD User Interface (UI). From here we going to create user accounts. Go to the 'mydomain' drop-down tab. Right click -> New -> Organizational Unit. Name this group '_Employees.'
+Now we are logged back in DC-1 with AD DS admin capability. Open Active Directory by clciking the start menu. Type Active Directory into the search and click the 'Active Directory Users and Computers' application. This will bring us to the AD User Interface (UI). From here we going to create user accounts. Go to the 'mydomain' drop-down tab. Right click -> New -> Organizational Unit. Name this group '_EMPLOYEES.' I like to use all-caps when I create new folders not defaulted in the domain to help me distinguish what I added to the UI. 
 </p>              
 <p>
 <img src="https://i.imgur.com/nXHRnAp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -143,5 +143,43 @@ Now we are logged back in DC-1 with AD DS admin capability. Open Active Director
 <p>
 <img src="https://i.imgur.com/SQYU4B2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>                                                                                                 
-                                                                                               
+<br />
+                                                                                                 
+<p>
+We will create an admin organizational unit as well and name it 'ADMINS.'  
+</p>
+<p>
+<img src="https://i.imgur.com/qHIdEnK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<p> 
+Right click the ADMINS folder. Hover the mouse over 'New' and click 'User.' From here we are going to create the Admin User 'Jane Doe.' Fill out the information and click 
+</p>
+<p>
+<img src="https://i.imgur.com/IFq40wq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p> 
+<br/>
+                                                                                                 
+<p>
+Create a password for Jane Doe. We're going to check the 'password never expires' boxe for this example. Click next. Click Finish. Now double-clich _ADMINS -> Jane Doe. Right click Jane Doe and select 'Properties.' Click the 'Member of' folder. Here we're going to add user Jane Doe to the member folder 'Domain Admins.' Every member of this group will have admin control and permissions going forward within AD DS. If you type 'Domain' and then click 'Search Groups,' 'Domain Admin' is an option. Click 'Domain Admins' then click 'OK'. Now click 'Apply' and then 'OK.' We have now just created an Admin User account in Active Directory.  
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/eMJOgRn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/ZqZq4QJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/ArmZWGG.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/Cyo4vG6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/CPCexT1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
                                                              
