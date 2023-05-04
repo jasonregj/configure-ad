@@ -197,3 +197,27 @@ Once we're logged into Client-1, go to Start and go to 'Settings' -> 'Rename thi
 <p>
 <img src="https://i.imgur.com/sHYHwCH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
+<h2>Reset Passwords & Manage User Accounts</h2>
+
+<p>
+Let's say a user logs in incorrectly too many time and gets locked out of their account. What we can do as an admin is go to ur AD UI and in the _EMPLOYEES folder, find the user account. For this example we created a 'bet.jax' user and they attempted failed to log in six times and are now locked out after discovering their correct user/pass. Right click 'bet.jax' and click 'Properties'. Click the 'Account' tab and check the 'Unlock Account' box and click 'OK'. That's it. 
+</p>
+<p>
+<img src="https://i.imgur.com/k6xLzh6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/dsKCAJz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<p>
+Now let's say a user has forgotten their login password and needs a new one. As an admin, you can reset their password and set a temporary password for them where they will be prompted to log in with the temporary password in order to change their password. You can go to the same UI -> _EMPLOYEES -> Right click 'bet.jax' -> Reset password -> Enter new password and click 'OK'. If you noticed, you can also disable an account. This may be the case if an employee leaves the organization and no longer requires organizational access. Upon clicking 'disable account' the login credentials for that user account become invalid. 
+</p>
+<p>
+<img src="https://i.imgur.com/BVlCCQq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/qQTm846.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
