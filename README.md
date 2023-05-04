@@ -154,7 +154,7 @@ We will create an admin organizational unit as well and name it 'ADMINS.'
 <br />
 
 <p> 
-Right click the ADMINS folder. Hover the mouse over 'New' and click 'User.' From here we are going to create the Admin User 'Jane Doe.' Fill out the information and click 
+Right click the ADMINS folder. Hover the mouse over 'New' and click 'User.' From here we are going to create the Admin User 'Jane Doe.' Fill out the information. Jane's domain name will be 'jane_admin.' Click next.
 </p>
 <p>
 <img src="https://i.imgur.com/IFq40wq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -162,7 +162,7 @@ Right click the ADMINS folder. Hover the mouse over 'New' and click 'User.' From
 <br/>
                                                                                                  
 <p>
-Create a password for Jane Doe. We're going to check the 'password never expires' boxe for this example. Click next. Click Finish. Now double-clich _ADMINS -> Jane Doe. Right click Jane Doe and select 'Properties.' Click the 'Member of' folder. Here we're going to add user Jane Doe to the member folder 'Domain Admins.' Every member of this group will have admin control and permissions going forward within AD DS. If you type 'Domain' and then click 'Search Groups,' 'Domain Admin' is an option. Click 'Domain Admins' then click 'OK'. Now click 'Apply' and then 'OK.' We have now just created an Admin User account in Active Directory.  
+Create a password for Jane Doe. We're going to check the 'password never expires' boxe for this example. Click next. Click Finish. Now double-click _ADMINS -> Jane Doe. Right click Jane Doe and select 'Properties.' Click the 'Member of' folder. Here we're going to add user Jane Doe to the member folder 'Domain Admins.' Every member of this group will have admin control and permissions going forward within AD DS. If you type 'Domain' and then click 'Search Groups,' 'Domain Admin' is an option. Click 'Domain Admins' then click 'OK'. Now click 'Apply' and then 'OK.' We have now just created an Admin User account in Active Directory. You can close out of the 'labuser' account and now log in as 'mydomain.com\jane_admin' and the password you created. 
 </p>
 <br />
 
@@ -183,3 +183,17 @@ Create a password for Jane Doe. We're going to check the 'password never expires
 </p>
 <br />
                                                              
+<p>
+Now we're going to join Client-1 to our domain (mydomain.com). Copy DC-1's private IP address from Microsoft Azure. Go to Client-1's VM configuration. Go to 'DNS Servers' -> Click 'Client 1138' -> Change the bubble from 'inherit from vitrual network' to 'Custom' and paste the private IP address from DC-1. Click 'Save.' Now restart your remote desktop connection from Client-1. Log back into Client one with 'Labuser' and password originally created for the VM from Azure since we are not quite yet joined to the network. 
+</p>
+<p>
+<img src="https://i.imgur.com/UbJbd1b.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<p>
+Once we're logged into Client-1, go to Start and go to 'Settings' -> 'Rename this PC (advanced)' -> 'Change' -> Select 'Domain' and type in 'mydomain.com' then select 'OK'. A login will prompt and you can now enter the admin login credentials we created for Jane Doe. So what this means is we have created an external desktop from the AD DS to login with Active Directory admin/user access. 
+</p>
+<p>
+<img src="https://i.imgur.com/sHYHwCH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
