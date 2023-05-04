@@ -135,3 +135,13 @@ Now a configuration window pops up. Select the bubble 'Add a new forest' and cho
 <h2>Create an Admin and Normal User Account in AD</h2>
 
 <p>
+Now we are logged back in DC-1 with AD DS admin capability. Open Active Directory by clciking the start menu. Type Active Directory into the search and click the 'Active Directory Users and Computers' application. This will bring us to the AD User Interface (UI). From here we going to create user accounts. Go to the 'mydomain' drop-down tab. Right click -> New -> Organizational Unit. Name this group '_Employees.'
+</p>              
+<p>
+<img src="https://i.imgur.com/nXHRnAp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/SQYU4B2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>                                                                                                 
+                                                                                               
+                                                             
